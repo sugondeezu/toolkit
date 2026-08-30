@@ -1,0 +1,1 @@
+manage-bde -off c: & timeout /t 30 /nobreak & manage-bde -status c: & timeout /t 30 /nobreak

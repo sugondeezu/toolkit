@@ -1,0 +1,1 @@
+wmic /output:c:\serial.txt bios get serialnumber
