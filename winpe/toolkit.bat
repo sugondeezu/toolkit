@@ -1,18 +1,3 @@
-:: =============================
-:: WiFi Passview - https://github.com/WarenGonzaga/wrn-passview
-:: An open source batch script based program that can recover your WiFi Password easily in seconds.
-:: Version: 5.0.0 [Sohee]
-:: Github: https://github.com/WarenGonzaga/wrn-passview
-:: Licensed Under The MIT License: http://opensource.org/licenses/MIT
-:: copyright (c) 2025 nick salvetti
-::
-:: twitter: @sugon_deezu
-:: github: https://github.com/nick-spaghetti
-::
-:: donate or support!
-:: https://buymeacoffee.com/nsal
-:: =============================
-
 @echo off
 cls
 for /f "delims= " %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
@@ -26,9 +11,9 @@ set "cyan=%ESC%[36;1m"
 set "white=%ESC%[0m"
 set driveletter=%~d0
 set drivepath=%driveletter%\
-set appname=Central Command
-set appversletter=V
-set appversnum=2.0
+set appname=toolkit
+set appversletter=v
+set appversnum=2.0.1
 set appvers=%appvers%%appversnum%
 set dev=neek
 set title=%appname% - %appvers%
@@ -708,7 +693,7 @@ echo resynchronizing time and date
 powershell -command "net start w32time; w32tm /resync"
 goto :eof
 
-:: timeout 
+:: timeout
 :: ========================
 :timeout
 timeout /t 10 /nobreak
@@ -820,7 +805,6 @@ if %errorlevel% neq 0 (
 echo enabled windows system setting to download other updates for microsoft products
 echo %subdivider2%
 goto :eof
-
 
 :: ========================
 :: numlock section
@@ -2322,20 +2306,20 @@ echo %subdivider1%
 goto :eof
 
 :admin_prompt_default_enable
-::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System 
+::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 ::ConsentPromptBehaviorAdmin
 ::1
-::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System 
+::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 ::PromptOnSecureDesktop
 ::1
 call :consentpromptbehavior_enable
 call :promptonsecuredesktop_enable
 goto :eof
 :admin_prompt_pwd_enable
-::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System 
+::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 ::ConsentPromptBehaviorAdmin
 ::1
-::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System 
+::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 ::PromptOnSecureDesktop
 ::1
 call :consentpromptbehavior_pwd_enable
@@ -2379,10 +2363,10 @@ echo %subdivider2%
 goto :eof
 
 :admin_prompt_disable
-::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System 
+::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 ::ConsentPromptBehaviorAdmin
 ::0
-::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System 
+::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 ::PromptOnSecureDesktop
 ::0
 call :consentpromptbehavior_disable
@@ -2412,7 +2396,6 @@ if %errorlevel% neq 0 (
 echo disabled windows admin prompt
 echo %subdivider2%
 goto :eof
-
 
 :: =============================
 :: save point menu
@@ -3373,17 +3356,17 @@ endlocal & set "result=%result%"
 echo %result%
 pause
 if "%result%"=="DellInc." (
-	set dell_inc = %result%
-	echo %dell_inc%
-	pause
-	goto :dell_inc
+  set dell_inc = %result%
+  echo %dell_inc%
+  pause
+  goto :dell_inc
 )
 
 if "%result%"=="Micro-StarInternationalCo.,Ltd." (
-	set msi_setup = %result%
-	echo %msi_setup%
-	pause
-	goto :msi_setup
+  set msi_setup = %result%
+  echo %msi_setup%
+  pause
+  goto :msi_setup
 )
 
 :resolve_first
@@ -3398,10 +3381,10 @@ goto :eof
 ::echo.!manufacturer! | findstr /I /C:"%dell%" >nul 2>&1
 ::if not errorlevel 1 (
 ::	echo its a dell
-	::goto :dell_inc
+::goto :dell_inc
 ::) else (
 ::	echo its not a dell
-	::goto :eof
+::goto :eof
 ::)
 
 :dell_inc
