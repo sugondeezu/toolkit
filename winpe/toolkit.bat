@@ -2628,7 +2628,7 @@ systeminfo & systeminfo > c:\systeminfo.txt
 goto :eof
 :serialnumber_start
 echo %subdivider1%
-call :serialnumber
+call :serial_ps
 echo %subdivider1%
 ::pause>nul
 goto system_info
