@@ -1,1 +1,0 @@
-start X:\win\utilities\hw_management\device_info\systeminfo.cmd & timeout /t 30 /nobreak & start X:\win\utilities\hw_management\device_info\bcdedit.cmd & timeout /t 30 /nobreak & start X:\win\utilities\hw_management\device_info\serial_number.cmd & timeout /t 30 /nobreak & start c:\

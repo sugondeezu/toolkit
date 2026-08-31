@@ -1,1 +1,0 @@
-start X:\win\utilities\system_management\netsh_reset.cmd & timeout /t 30 /nobreak & start X:\win\utilities\network_management\net_repair.lnk 

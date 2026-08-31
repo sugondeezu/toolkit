@@ -1,1 +1,0 @@
-cleanmgr /verylowdisk & del /q/f/s %TEMP%\* & del /s/q c:\windows\temp\* & del /q/f/s c:\windows\softwaredistribution\download\* & dism /cleanup-mountpoints
