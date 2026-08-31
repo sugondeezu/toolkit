@@ -32,9 +32,9 @@ set subdivider3=======================
 :: =============================
 :start
 title %title%
-color %uic%
 echo.
 echo %divider%
+echo.
 echo.
 echo.
 echo.
@@ -53,7 +53,8 @@ echo.
 echo.
 echo.
 echo.
-echo %white%%divider%
+echo.
+echo %divider%
 pause>null
 goto main_menu
 
@@ -3550,19 +3551,17 @@ if %errorlevel% equ 0 (
   goto :updates_win_nf
 )
 
-:gs_support
-copy "%driveletter%\win\installers\support\Geek Squad Support.exe" C:\Users\Public\Desktop
-goto :eof
 :notepad
 start "" %driveletter%\win\utilities\windows_tools\misc\notepad++\notepad++.exe
 goto :eof
 :bell
 powershell -command "[console]::beep(800,200); [console]::beep(800,200); [console]::beep(800,200)"
 goto :eof
+
 :upgrade
 set upgradeversion=
-curl -s https://www.apple.com/ > c:\temp.txt
-findstr /i "visuallyhidden" c:\temp.txt > nul > c:\target.txt
+curl -s https://github.com/sugondeezu/toolkit > %drivepath%logs\temp_toolkit_doc.txt
+findstr /i "visuallyhidden" %drivepath%logs\temp_toolkit_doc.txt > nul > %drivepath%logs\target.txt
 if %upgradeversion%>=%appversion% (
   echo hey upgrade available!
   echo %appversion% < %upgradeversion%
@@ -3574,34 +3573,15 @@ pause
 goto :eof
 
 :: =============================
-:: super error message
-:: =============================
-:fail5
-title %appname% %appvers% - %appstat% [Error]
-color %erruicolor%
-echo # %divider%
-echo # %appname% %appvers% - %appstat%
-echo # by %dev%
-echo # %divider%
-echo # Invalid option! Please try again...
-echo # %divider%
-echo #
-echo # Press any key to continue... (except power button lol)
-pause>null
-goto options
-
-:: =============================
 :: success message
 :: =============================
 :success
-::color %ggc%
 echo %green%
 echo %divider%
 echo.
-echo 	success
+echo 	success!
 echo.
 echo %divider%
-::color %uic%
 echo %white%
 pause>null
 goto :eof
@@ -3610,16 +3590,18 @@ goto :eof
 :: error message retry
 :: =============================
 :error_retry
-::color %errc%
 echo %red%
-echo %divider%
-echo.
+echo #
+echo # %divider%
+echo # %appname% %appvers% - %appstat%
+echo # by %dev%
+echo # %divider%
+echo #
 echo 	error
-echo.
 echo 	retrying, please wait
-echo.
-echo %divider%
-::color %uic%
+echo #
+echo # %divider%
+echo #
 echo %white%
 pause>null
 goto :eof
@@ -3630,16 +3612,20 @@ goto :eof
 :error_fail
 ::color %errc%
 echo %red%
-echo %divider%
-echo.
+echo #
+echo # %divider%
+echo # %appname% %appvers% - %appstat%
+echo # by %dev%
+echo # %divider%
+echo #
 echo 	error
 echo 	%custom_failure_msg%
-echo.
-echo %divider%
-::color %uic%
+echo #
+echo # %divider%
+echo #
 echo %white%
 pause>null
-goto :eof
+goto main_menu
 
 rem =============================
 rem program error
@@ -3648,13 +3634,16 @@ rem =============================
 del null
 cls
 title %appname% %appvers% - %appstat% [Error]
-::color %erruicolor%
 echo %red%
+echo #
 echo # %divider%
 echo # %appname% %appvers% - %appstat%
 echo # by %dev%
 echo # %divider%
+echo #
+echo # error
 echo # invalid option, please try again...
+echo #
 echo # %divider%
 echo #
 echo # press any key to continue... (except power button lol)
