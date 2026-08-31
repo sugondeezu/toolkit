@@ -1,1 +1,0 @@
-start X:\win\utilities\system_management\updates_win.cmd & timeout /t 30 /nobreak & start X:\win\utilities\system_management\winsec\mp_update_mpsig.lnk

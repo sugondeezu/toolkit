@@ -1,1 +1,0 @@
-sc config trustedinstaller start=auto & sc config wlansvc start=auto & net start trustedinstaller & net start wlansvc 

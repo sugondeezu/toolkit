@@ -1,1 +1,0 @@
-systeminfo > c:\systeminfo.txt
