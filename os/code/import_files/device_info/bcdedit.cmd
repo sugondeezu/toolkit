@@ -1,0 +1,1 @@
+bcdedit  > c:\bcdedit.txt

@@ -1,0 +1,1 @@
+copy X:\win\installers\support\GeekSquadSupport.exe C:\Users\Public\Desktop

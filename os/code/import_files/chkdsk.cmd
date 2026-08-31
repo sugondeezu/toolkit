@@ -1,0 +1,1 @@
+chkdsk c: /f/r/b & chkdsk c: /x/sdcleanup
