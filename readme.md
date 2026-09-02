@@ -13,3 +13,8 @@
 :: donate or support!
 :: https://buymeacoffee.com/nsal
 :: =============================
+:: - updates -
+:: 09/01/2026 - had to remove boot.wim for being too large. will investigate.
+:: 08/30/2026 - general file management and cleanup
+:: 08/29/2026 - uploading to git
+:: =============================
